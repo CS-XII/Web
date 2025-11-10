@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class 12 Computer Science Web Project</title>
+
+  <style>
+    :root {
+  --primary: #000;               /* Main text color: black */
+  --accent: #000;                /* Accent color changed from yellow to black */
+  --bg: #fffbea;
+  --card-bg: #ffffff;
+  --radius: 16px;
+  --shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #fff8d6, #ffffff);
+  color: var(--primary);
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fffbe8;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+nav .nav-wrap {
+  max-width: 1200px;
+  margin: auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--primary);
+  margin-left: 20px;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: #444;
+}
+
+/* HEADER */
+header {
+  padding-top: 120px;
+  padding-bottom: 40px;
+  background: linear-gradient(135deg, #fffbe0, #ffffff);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.header-container img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e0e0e0;
+}
+
+.header-text h1 {
+  font-size: 2rem;
+  margin: 0;
+  letter-spacing: 1px;
+  color: var(--primary);
+}
+
+.cs-zone {
+  font-size: 1rem;
+  margin-top: 5px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.header-text p {
+  margin: 6px 0;
+  color: #222;
+}
+
+/* SECTIONS */
+section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto;
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+/* PDF ROW */
+.pdf-row {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.pdf-box {
+  flex: 1;
+  min-width: 350px;
+  background: #fffde8;
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  border-radius: 10px;
+}
+
+/* PROJECT CARDS */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+  justify-content: center;
+}
+
+.project-card {
+  background: linear-gradient(145deg,#ffffff,#fff8d8);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+  transition: 0.35s;
+  border-top: 8px solid #000;
+  position: relative;
+  overflow: hidden;
+  color: var(--primary);
+}
+
+.project-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.project-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background:#fffef0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.5rem;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom:10px;
+  color: var(--primary);
+}
+
+.project-footer {
+  margin-top:20px;
+  padding-top:12px;
+  border-top:1px solid #ccc;
+  font-size:0.9rem;
+  color:#333;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 18px;
+  text-decoration: none;
+  background: #000;
+  color: #fff;
+  padding: 10px 26px;
+  border-radius: 40px;
+  font-weight: 600;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  transition:0.25s;
+}
+
+.read-more:hover {
+  background:#333;
+  transform:scale(1.05);
+}
+
+/* PHOTO SHOWCASE SECTION */
+#photo-showcase {
+  text-align: center;
+  background: linear-gradient(135deg, #fffbe0, #ffffff);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+#photo-showcase h2 {
+  color: var(--primary);
+  margin-bottom: 25px;
+}
+
+.photo-container {
+  max-width: 1000px;
+  margin: auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.photo-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.photo-container img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+
+/* FOOTER */
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 40px;
+  font-size: 0.95rem;
+}
+
+/* MOBILE */
+@media(max-width: 700px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav .nav-wrap {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-wrap">
+      <div class="logo">Class 12 CS</div>
+      <div class="links">
+        <a href="#header">Home</a>
+        <a href="#magazine">Magazine</a>
+        <a href="#projects">Projects</a>
+        <a href="#conclusion">Conclusion</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header id="header" style="background:linear-gradient(135deg,#fff9d9,#ffffff); padding:140px 20px; text-align:center;">
+    <div style="max-width:1000px; margin:auto; display:flex; align-items:center; justify-content:center; gap:40px;">
+      <!-- LOGO LEFT -->
+      <div style="width:130px; height:130px; background:#fff; border-radius:20px; box-shadow:0 10px 25px rgba(0,0,0,0.1); display:flex; align-items:center; justify-content:center; overflow:hidden;">
+        <img src="logo.webp" style="width:100%; height:100%; object-fit:cover;" />
+      </div>
+
+      <!-- TEXT RIGHT -->
+      <div style="text-align:left;">
+        <h1 style="font-size:2.6rem; font-weight:700; margin:0; letter-spacing:1px;">PM SHRI KV BSF DANTIWADA</h1>
+
+        <p style="margin:15px 0 30px; font-size:1.1rem; color:#333; line-height:1.6; max-width:550px;">
+          Official Class 12 Computer Science Web Project showcasing the work, achievements, projects, and creativity of our batch.
+        </p>
+
+        <div style="display:flex; gap:18px; margin-top:10px;">
+          <a href="#projects" style="padding:12px 28px; background:linear-gradient(90deg,#fde047,#facc15); color:#111; border-radius:40px; text-decoration:none; font-weight:600; box-shadow:0 8px 20px rgba(0,0,0,0.1);">Explore Projects</a>
+
+          <a href="#magazine" style="padding:12px 28px; background:#fff; color:#111; border-radius:40px; text-decoration:none; font-weight:600; box-shadow:0 8px 20px rgba(0,0,0,0.1);">Magazine</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAGAZINE SECTION -->
+  <section id="magazine">
+    <h2>E-Magazine & Documents</h2>
+
+    <!-- FIRST ROW: EMAGAZINE + NEW PDF -->
+    <div class="pdf-row" style="margin-bottom:30px;">
+      <div class="pdf-box">
+        <h3>E-Magazine</h3>
+        <iframe src="emagazine.pdf" style="height:660px; border-radius:12px;"></iframe>
+      </div>
+
+      <div class="pdf-box">
+        <h3>Additional PDF</h3>
+        <iframe src="newfile.pdf" style="height:660px; border-radius:12px;"></iframe>
+      </div>
+    </div>
+
+    <!-- SECOND ROW: PPT FULL WIDTH -->
+    <div class="pdf-box" style="width:100%;">
+      <h3>Presentation (PPT)</h3>
+      <iframe src="presentation.pdf" style="height:520px; aspect-ratio:16/9; border-radius:12px;"></iframe>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <h2>Our Projects</h2>
+
+    <div class="projects">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-icon">📊</div>
+        <h3>Class 11 Marking System</h3>
+        <p><b>By:</b> Patel Deepak Kumar<br><br>
+        This project evaluates academic performance and calculates required passing marks with analytics.
+        </p>
+        <a href="#" class="read-more">Read More</a>
+        <div class="project-footer">Tools: Python, CSV | Status: Completed</div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <div class="project-icon">🔐</div>
+        <h3>Unique Number Plate System</h3>
+        <p><b>By:</b> Jeet Vyas<br><br>
+        A secure system that generates unique, non-reusable vehicle number IDs with validation layers to ensure authenticity.
+        </p>
+        <a href="#" class="read-more">Read More</a>
+        <div class="project-footer">Tools: Python, File Handling | Status: Completed</div>
+      </div>
+    </div>
+  </section>
+    <!-- PHOTO SHOWCASE SECTION -->
+  <section id="photo-showcase">
+    <h2>Cyber Security Board</h2>
+    <div class="photo-container">
+      <img src="a.jpeg" alt="Class 12 Computer Science Batch Photo">
+    </div>
+  </section>
+
+
+  <!-- CONCLUSION -->
+  <section id="conclusion">
+    <h2>Conclusion</h2>
+    <p style="text-align:center; max-width:800px; margin:auto; line-height:1.8;">
+      This website represents the Class 12 Computer Science batch of <b>PM SHRI KV BSF Dantiwada</b>. It showcases our creativity, teamwork, and technical understanding under the guidance of <b>Mrs. Sanchi Khurana</b>. Each project reflects our readiness to explore real-world technology.
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Class 12 Computer Science | PM SHRI KV BSF Dantiwada
+  </footer>
+
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+   
+  </script>
+</body>
+</html>
