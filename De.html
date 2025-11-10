@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Python Project Showcase</title>
+  <style>
+    :root {
+      --muted: #6b7280;
+      --accent: #0b6efd;
+      --shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #ffffff;
+      color: #0f172a;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 28px;
+    }
+
+    /* Header Styling */
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      border-bottom: 2px solid rgba(11, 110, 253, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 38px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+    }
+
+    header p.lead {
+      margin: 12px auto 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .byline {
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Main Code Box */
+    .code-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15, 23, 42, 0.04);
+      margin-top: 28px;
+    }
+
+    pre.code {
+      width: 100%;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.5;
+      background: #f9fafb;
+      padding: 14px;
+      border-radius: 8px;
+      overflow: auto;
+      white-space: pre;
+      border: none;
+      outline: none;
+    }
+
+    /* Explanation Boxes (Flex Layout) */
+.explanation-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 32px;
+}
+
+
+    .explain-box {
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15, 23, 42, 0.04);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 0; /* helps prevent overflow */
+    }
+
+    .explain-box h3 {
+      margin: 0;
+      font-size: 16px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .explain-box p {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    pre.small-code {
+      background: #f9fafb;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;
+      font-size: 12px;
+      padding: 10px;
+      border-radius: 6px;
+      overflow: auto;
+      color: #1e293b;
+      margin-top: 6px;
+    }
+
+    footer {
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 960px) {
+      .explanation-grid {
+        flex-wrap: wrap;
+      }
+      .explain-box {
+        flex: 1 1 45%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .explain-box {
+        flex: 1 1 100%;
+      }
+      header h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1 id="title">Python Project Showcase</h1>
+      <p class="lead" id="description">An elegant presentation of your Python project with code explanations for each section.</p>
+      <div class="byline">Made by <strong id="author">Patel Deepak Kumar</strong> • <span class="muted" id="date">Aug 21, 2025</span></div>
+    </header>
+
+    <div class="code-box">
+      <label class="muted">Full Python Code:</label>
+      <pre class="code">import csv
+import math as m
+print("<--------HEllO WELCOME TO MARKING SYSTEM OF CLASS XI-------->")
+print()
+print("<--------PROJECT IS MADE BY PATEL DEEPAK , KARANDEEP AND DHRUV KUMAR-------->")
+print()
+print("<--------CODE IS SIMPLE USE GIVEN BELOW STEPS TO USE THIS!-------->")
+print()
+print("TYPE marking() TO ADD DATA OF STUDENT TO FILE Marks.csv")
+print("TYPE read() TO READ DATA OF FILE Marks.csv")
+print("TYPE update() TO UPDATE DATA AND STORE IN FILE Updated-Marks.csv")
+print("TYPE read1() TO READ DATA OF FILE Updated-Marks.csv")
+print()
+print("<-------------------------------------------------------------------------------------->")
+
+def marking():
+    f=open("Marks.csv","a",newline="")
+    a=csv.writer(f)
+    print("=================Passing Marks Are Assumed To Be 23 In 70 and 27 In 80=================")
+    num=int(input("How Many Students Data You Want To Fill :"))
+    for i in range(num):
+        name=input("Enter Name Of Student: ")
+        
+        phy1,phy3,phy2=input("Enter Physics Marks In Formate Pt1,halfyearly,pt3 :").split(",")
+        chem1,chem3,chem2=input("Enter Chemistry Marks In Formate Pt1,halfyearly,pt3 :").split(",")
+        math1,math3,math2=input("Enter Maths/Bio Marks In Formate Pt1,halfyearly,pt3 :").split(",")
+        cs1,cs3,cs2=input("Enter Cs Marks In Formate Pt1,halfyearly,pt3 :").split(",")
+        eng1,eng3,eng2=input("Enter English Marks In Formate Pt1,halfyearly,pt3 :").split(",")
+        print()
+
+        pz=int(input("How Much You Want In Physics Final Count Out Of 70: "))
+        cz=int(input("How Much You Want In Chemistry Final Count Out Of 70: "))
+        mz=int(input("How Much You Want In Math/Bio Final Count Out Of 80: "))
+        csz=int(input("How Much You Want In CS Final Count Out Of 70: "))
+        ez=int(input("How Much You Want In English Final Count Out Of 80: "))
+        print()
+
+        phy10=int(phy1)/4;chem10=int(chem1)/4;math10=int(math1)/4;cs10=int(cs1)/4;eng10=int(eng1)/4
+        phy20=int(phy2)/4;chem20=int(chem2)/4;math20=int(math2)/4;cs20=int(cs2)/4;eng20=int(eng2)/4
+        phy30=(int(phy3)/7)*3;chem30=(int(chem3)/7)*3;math30=(int(math3)/8)*3;cs30=(int(cs3)/7)*3;eng30=(int(eng3)/8)*3
+
+
+        pf=((((pz*10)-7*(phy10+phy20+phy30))/5))
+        cf=((((cz*10)-7*(chem10+chem20+chem30))/5))
+        mf=((((mz*10)-8*(math10+math20+math30))/5))
+        csf=((((csz*10)-7*(cs10+cs20+cs30))/5))
+        ef=((((ez*10)-8*(eng10+eng20+eng30))/5))
+
+        print(" -ve mark indicate that you have already achived your desired marks you dont need to work more!")
+        print()
+
+        print("Marks Needed To Get",pz," In Physics : ",pf)
+        print("Marks Needed To Get",cz," In Chemistry : ",cf)
+        print("Marks Needed To Get",mz," In Math/BIO : ",mf)
+        print("Marks Needed To Get",csz," In CS : ",csf)
+        print("Marks Needed To Get",ez," In English : ",ef)
+        print()
+
+        
+        a.writerow([name,pf,cf,mf,csf,ef])
+    f.close()
+
+
+def read():
+    f1=open("Marks.csv","r")
+    b=csv.reader(f1)
+    for i in b:
+        print(i)
+    f1.close()
+
+
+def update():
+    name1=input("Enter Name Of Student WHose Record You Want To Update: ")
+    f2=open("Marks.csv","r")
+    f3=open("Updated-Marks.csv","w")
+    b=csv.reader(f2)
+    c=csv.writer(f3)
+    for i in b:
+        if i!=[]:
+            if i[0]==name1:
+                phy1,phy3,phy2=input("Enter Physics Marks In Formate Pt1,halfyearly,pt3 :").split(",")
+                chem1,chem3,chem2=input("Enter Chemistry Marks In Formate Pt1,halfyearly,pt3 :").split(",")
+                math1,math3,math2=input("Enter Maths/Bio Marks In Formate Pt1,halfyearly,pt3 :").split(",")
+                cs1,cs3,cs2=input("Enter Cs Marks In Formate Pt1,halfyearly,pt3 :").split(",")
+                eng1,eng3,eng2=input("Enter English Marks In Formate Pt1,halfyearly,pt3 :").split(",")
+                print()
+
+                pz=int(input("How Much You Want In Physics Final Count Out Of 70: "))
+                cz=int(input("How Much You Want In Chemistry Final Count Out Of 70: "))
+                mz=int(input("How Much You Want In Math/Bio Final Count Out Of 80: "))
+                csz=int(input("How Much You Want In CS Final Count Out Of 70: "))
+                ez=int(input("How Much You Want In English Final Count Out Of 80: "))
+                print()
+
+                phy10=int(phy1)/4;chem10=int(chem1)/4;math10=int(math1)/4;cs10=int(cs1)/4;eng10=int(eng1)/4
+                phy20=int(phy2)/4;chem20=int(chem2)/4;math20=int(math2)/4;cs20=int(cs2)/4;eng20=int(eng2)/4
+                phy30=(int(phy3)/7)*3;chem30=(int(chem3)/7)*3;math30=(int(math3)/8)*3;cs30=(int(cs3)/7)*3;eng30=(int(eng3)/8)*3
+
+
+                pf=((((pz*10)-7*(phy10+phy20+phy30))/5))
+                cf=((((cz*10)-7*(chem10+chem20+chem30))/5))
+                mf=((((mz*10)-8*(math10+math20+math30))/5))
+                csf=((((csz*10)-7*(cs10+cs20+cs30))/5))
+                ef=((((ez*10)-8*(eng10+eng20+eng30))/5))
+
+                print(" -ve mark indicate that you have already achived your desired marks you dont need to work more!")
+                print()
+
+                print("Marks Needed To Get",pz," In Physics : ",pf)
+                print("Marks Needed To Get",cz," In Chemistry : ",cf)
+                print("Marks Needed To Get",mz," In Math/BIO : ",mf)
+                print("Marks Needed To Get",csz," In CS : ",csf)
+                print("Marks Needed To Get",ez," In English : ",ef)
+                print()
+
+                
+                c.writerow([name1,pf,cf,mf,csf,ef])
+            else:
+                c.writerow(i)
+    f2.close()
+
+
+def read1():
+    f1=open("Updated-Marks.csv","r")
+    b=csv.reader(f1)
+    for i in b:
+        print(i)
+    f1.close()
+
+    </pre>
+    </div>
+
+    <div class="explanation-grid">
+      <div class="explain-box">
+        <h3>Part 1: Setup</h3>
+        <pre class="small-code">import math as m</pre>
+        <p>Explain what the initial imports or variables do here.</p>
+      </div>
+
+      <div class="explain-box">
+        <h3>Part 2: Logic</h3>
+        <pre class="small-code">phy1,phy3,phy2=input("Enter Physics Marks In Formate Pt1,halfyearly,pt3 :").split(",")
+        chem1,chem3,chem2=input("Enter Chemistry Marks In Formate Pt1,halfyearly,pt3 :").split(",")
+        math1,math3,math2=input("Enter Maths/Bio Marks In Formate Pt1,halfyearly,pt3 :").split(",")
+        cs1,cs3,cs2=input("Enter Cs Marks In Formate Pt1,halfyearly,pt3 :").split(",")
+        eng1,eng3,eng2=input("Enter English Marks In Formate Pt1,halfyearly,pt3 :").split(",")</pre>
+        <p>Describe how the main logic or loops operate in this part.</p>
+      </div>
+
+      <div class="explain-box">
+        <h3>Part 3: Output</h3>
+        <pre class="small-code">pz=int(input("How Much You Want In Physics Final Count Out Of 70: "))
+        cz=int(input("How Much You Want In Chemistry Final Count Out Of 70: "))
+        mz=int(input("How Much You Want In Math/Bio Final Count Out Of 80: "))
+        csz=int(input("How Much You Want In CS Final Count Out Of 70: "))
+        ez=int(input("How Much You Want In English Final Count Out Of 80: "))</pre>
+        <p>Clarify how the results are printed or processed.</p>
+      </div>
+
+      <div class="explain-box">
+        <h3>Part 4: Notes</h3>
+        <pre class="small-code">phy10=int(phy1)/4;chem10=int(chem1)/4;math10=int(math1)/4;cs10=int(cs1)/4;eng10=int(eng1)/4
+        phy20=int(phy2)/4;chem20=int(chem2)/4;math20=int(math2)/4;cs20=int(cs2)/4;eng20=int(eng2)/4
+        phy30=(int(phy3)/7)*3;chem30=(int(chem3)/7)*3;math30=(int(math3)/8)*3;cs30=(int(cs3)/7)*3;eng30=(int(eng3)/8)*3
+
+
+        pf=((((pz*10)-7*(phy10+phy20+phy30))/5))
+        cf=((((cz*10)-7*(chem10+chem20+chem30))/5))
+        mf=((((mz*10)-8*(math10+math20+math30))/5))
+        csf=((((csz*10)-7*(cs10+cs20+cs30))/5))
+        ef=((((ez*10)-8*(eng10+eng20+eng30))/5))</pre>
+        <p>Share notes or improvements here.</p>
+      </div>
+    </div>
+
+    <footer>
+      This page showcases your Python project with a clean white layout and section-wise explanations.
+    </footer>
+  </div>
+</body>
+</html>
