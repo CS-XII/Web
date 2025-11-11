@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Python Project Showcase</title>
+  <style>
+    :root {
+      --muted: #6b7280;
+      --accent: #0b6efd;
+      --shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #ffffff;
+      color: #0f172a;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 28px;
+    }
+
+    /* Header Styling */
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      border-bottom: 2px solid rgba(11, 110, 253, 0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 38px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+    }
+
+    header p.lead {
+      margin: 12px auto 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .byline {
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Main Code Box */
+    .code-box {
+      background: #fff;
+      border-radius: 12px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15, 23, 42, 0.04);
+      margin-top: 28px;
+    }
+
+    pre.code {
+      width: 100%;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 1.5;
+      background: #f9fafb;
+      padding: 14px;
+      border-radius: 8px;
+      overflow: auto;
+      white-space: pre;
+      border: none;
+      outline: none;
+    }
+
+    /* Explanation Boxes (Flex Layout) */
+.explanation-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 32px;
+}
+
+
+    .explain-box {
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(15, 23, 42, 0.04);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 0; /* helps prevent overflow */
+    }
+
+    .explain-box h3 {
+      margin: 0;
+      font-size: 16px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .explain-box p {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    pre.small-code {
+      background: #f9fafb;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', 'Courier New', monospace;
+      font-size: 12px;
+      padding: 10px;
+      border-radius: 6px;
+      overflow: auto;
+      color: #1e293b;
+      margin-top: 6px;
+    }
+
+    footer {
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 960px) {
+      .explanation-grid {
+        flex-wrap: wrap;
+      }
+      .explain-box {
+        flex: 1 1 45%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .explain-box {
+        flex: 1 1 100%;
+      }
+      header h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1 id="title">Python Project Showcase</h1>
+      <p class="lead" id="description">An elegant presentation of your Python project with code explanations for each section.</p>
+      <div class="byline">Made by <strong id="author">Jeet Vyas</strong> • <span class="muted" id="date">Aug 23rd, 2025</span></div>
+    </header>
+
+    <div class="code-box">
+      <label class="muted">Full Python Code:</label>
+      <pre class="code">
+#Binary files
+import pickle
+#RTO PLATE NO. GENERATION SOFTWARE
+print("--->WELCOME TO the RTO NO. PLATE UNIQUE GENERATION AND SEARCH PROGRAM<---")
+print("...1)UNIQUE NO. PLATE GENERATION...")
+print("...2)REPORT CREATION OF RTO PLATE REGISTERED DATA...")
+e=str(input("Enter the purpose of your visit to the pogram:"))
+
+if e=="1":
+    import random as r
+    import string as st
+    def generate():
+        f5=open("RTO.DAT","wb")
+        data=[]
+        data.append(["NAME","ADDRESS","RTOCODE","STATE"])
+        while True:
+            NAME=str(input("Enter the name of registered owner:"))
+            ADDRESS=str(input("Enter the address of registered owner:"))
+            RTOCODE=str(input("Enter RTO code of the given region:"))
+            STATE=str(input("Enter the state of the given region:"))
+            a1=r.choice(st.ascii_uppercase)
+            a2=r.choice(st.ascii_uppercase)
+            n1=str(r.randint(1000,10000))
+            plno=STATE+RTOCODE+a1+a2+n1
+            data.append(["plno","NAME","ADDRESS","RTOCODE","STATE"])
+            print("RTO PLATE NO. ALLOTED TO",NAME,"IS:",plno)
+            ch1=input("DO YOU WANT TO CONTINUE??? Y/N :")
+            if ch1=="N":
+                break
+            plno=STATE+RTOCODE+a1+a2+n1
+            print("RTO PLATE NO. HAS BEEN SUCCESSFULLY GENERATED !!!!")
+            pickle.dump(data,f5)
+            f5.close()
+    generate()
+if e=="2":
+    def report():
+        f=open("RTO.DAT","wb")
+        data=[]
+        data.append(["RTO plate no","NAME","ADDRESS",])
+        while True:
+            RTOplateno=str(input("Enter the vehicle's RTO plate No.:"))
+            NAME=str(input("Enter the name of registered owner:"))
+            ADDRESS=str(input("Enter the address of the owner:"))
+            data.append([RTOplateno,NAME,ADDRESS])
+            CH=input("Do you want to enter more:Y for YES and N for NO")
+            if CH=="N":
+                break
+            pickle.dump(data,f)
+            f.close()
+    report()
+    def search():
+        print("ENTER PURPOSE FOR SEARCHING:::HELP US TO IMPROVE:::HELP US IN SURVEYING:::")
+        print("1)MEMO PRODUCTION")
+        print("2)CRIMINAL INVESTIGATION")
+        print("3)DUPLICATION")
+        C=str(input("Enter Purpose for searching:::"))
+        found=0
+        f1=open("RTO.DAT","rb")
+        data=pickle.load(f1)
+        c=str(input("Enter the RTO plate no. for searching:"))
+        for i in data:
+            if i[0]==c:
+                print("ADDRESS FOUND:",i[2])
+                print("Registered name:",i[1])
+        if C=="1":
+            print("MEMO PRODUCED")
+            w=str(input("WANT TO SEND THE MEMO:Y for YES or N for NO:"))
+            if w=="Y":
+                print("MEMO SENDING PROCEDURE INITIATED!!!")
+            else:
+                print("MEMO DID NOT GET SEND!!1")
+        if C=="2":
+            print("REPORT PRODUCED")
+            w=str(input("WANT TO GET THE REPORT:Y for YES or N for NO:"))
+            if w=="Y":
+                print("SENDING REPORT TO THE OFFICE !!!")
+        if C=="3":
+            print("COMPLAINT PRODUCED")
+            w=str(input("WANT TO SEND THE COMPLAINT OR NOTICE: C for COMPLAINT or N for NOTICE:"))
+            if w=="C":
+                print("COMPLAINT SENDING PROCEDURE INITIATED!!!")
+            else:
+                print("NOTICE SENDING PROCEDURE INITIATED!!1")
+        f1.close()
+    search()
+    </pre>
+    </div>
+
+    <footer>
+      This page showcases your Python project with a clean white layout and section-wise explanations.
+    </footer>
+  </div>
+</body>
+</html>
