@@ -15,7 +15,7 @@
     html, body {
       height: 100%;
       margin: 0;
-      background: #ffffff;
+      background: linear-gradient(135deg, #fff8d6, #ffffff);
       color: #0f172a;
     }
 
@@ -296,32 +296,35 @@ def read1():
       <div class="explain-box">
         <h3>Part 1: Setup</h3>
         <pre class="small-code">import math as m</pre>
-        <p>Explain what the initial imports or variables do here.</p>
+        <p>Here we import math module as we are going to use some funtcion of this module in further code.</p>
       </div>
 
       <div class="explain-box">
-        <h3>Part 2: Logic</h3>
-        <pre class="small-code">phy1,phy3,phy2=input("Enter Physics Marks In Formate Pt1,halfyearly,pt3 :").split(",")
+        <h3>Part 2: Input</h3>
+        <pre class="small-code">
+        phy1,phy3,phy2=input("Enter Physics Marks In Formate Pt1,halfyearly,pt3 :").split(",")
         chem1,chem3,chem2=input("Enter Chemistry Marks In Formate Pt1,halfyearly,pt3 :").split(",")
         math1,math3,math2=input("Enter Maths/Bio Marks In Formate Pt1,halfyearly,pt3 :").split(",")
         cs1,cs3,cs2=input("Enter Cs Marks In Formate Pt1,halfyearly,pt3 :").split(",")
         eng1,eng3,eng2=input("Enter English Marks In Formate Pt1,halfyearly,pt3 :").split(",")</pre>
-        <p>Describe how the main logic or loops operate in this part.</p>
+        <p>This part take input of user's marks in one go!</p>
       </div>
 
       <div class="explain-box">
-        <h3>Part 3: Output</h3>
-        <pre class="small-code">pz=int(input("How Much You Want In Physics Final Count Out Of 70: "))
+        <h3>Part 3: Marks Expected</h3>
+        <pre class="small-code"> 
+        pz=int(input("How Much You Want In Physics Final Count Out Of 70: "))
         cz=int(input("How Much You Want In Chemistry Final Count Out Of 70: "))
         mz=int(input("How Much You Want In Math/Bio Final Count Out Of 80: "))
         csz=int(input("How Much You Want In CS Final Count Out Of 70: "))
         ez=int(input("How Much You Want In English Final Count Out Of 80: "))</pre>
-        <p>Clarify how the results are printed or processed.</p>
+        <p>This is to take input of user for how much they are aiming for.</p>
       </div>
 
       <div class="explain-box">
-        <h3>Part 4: Notes</h3>
-        <pre class="small-code">phy10=int(phy1)/4;chem10=int(chem1)/4;math10=int(math1)/4;cs10=int(cs1)/4;eng10=int(eng1)/4
+        <h3>Part 4: Calculation</h3>
+        <pre class="small-code">
+        phy10=int(phy1)/4;chem10=int(chem1)/4;math10=int(math1)/4;cs10=int(cs1)/4;eng10=int(eng1)/4
         phy20=int(phy2)/4;chem20=int(chem2)/4;math20=int(math2)/4;cs20=int(cs2)/4;eng20=int(eng2)/4
         phy30=(int(phy3)/7)*3;chem30=(int(chem3)/7)*3;math30=(int(math3)/8)*3;cs30=(int(cs3)/7)*3;eng30=(int(eng3)/8)*3
 
@@ -331,12 +334,12 @@ def read1():
         mf=((((mz*10)-8*(math10+math20+math30))/5))
         csf=((((csz*10)-7*(cs10+cs20+cs30))/5))
         ef=((((ez*10)-8*(eng10+eng20+eng30))/5))</pre>
-        <p>Share notes or improvements here.</p>
+        <p>This is the final calculation to predict the mark needed to score in finals . This formula is 100% made by Deepak without any external help.</p>
       </div>
     </div>
 
     <footer>
-      This page showcases your Python project with a clean white layout and section-wise explanations.
+      This page showcases your Python project with a clean white layout and section-wise explanations. ~ Patel Deepak Kumar 
     </footer>
   </div>
 </body>
